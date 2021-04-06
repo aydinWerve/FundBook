@@ -14,5 +14,6 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Fund> Funds { get; set; }
+        public DbSet<FundRecord> FundRecords { get; set; }
     }
 }

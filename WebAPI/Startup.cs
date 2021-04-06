@@ -32,6 +32,8 @@ namespace WebAPI
             services.AddControllers();
             services.AddSingleton<IFundService, FundManager>();
             services.AddSingleton<IFundDal, EfFundDal>();
+            services.AddSingleton<IFundRecordService, FundRecordManager>();
+            services.AddSingleton<IFundRecordDal, EfFundRecordDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
