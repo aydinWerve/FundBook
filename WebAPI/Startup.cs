@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Concrete;
+using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
@@ -30,10 +31,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IFundService, FundManager>();
-            services.AddSingleton<IFundDal, EfFundDal>();
-            services.AddSingleton<IFundRecordService, FundRecordManager>();
-            services.AddSingleton<IFundRecordDal, EfFundRecordDal>();
+
+            //services.AddSingleton<IFundService, FundManager>();
+            //services.AddSingleton<IFundDal, EfFundDal>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
