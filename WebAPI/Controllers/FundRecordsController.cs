@@ -42,6 +42,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getfundrecorddetaildtos")]
+        public IActionResult GetFundRecordDetailDTOs()
+        {
+            var result = _fundRecordService.GetFundRecordDetailDTOs();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(FundRecord fundRecord)
         {

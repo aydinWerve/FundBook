@@ -6,6 +6,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -27,6 +28,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<FundRecord>(_fundRecordDal.Get(f => f.Id == fundRecordId));
         }
+
+        public IDataResult<List<FundRecordDetailDto>> GetFundRecordDetailDTOs()
+        {
+            return new SuccessDataResult<List<FundRecordDetailDto>>(_fundRecordDal.GetFundRecordDetailDTOs());
+        }
+
         public IResult Add(FundRecord fundRecord)
         {
             _fundRecordDal.Add(fundRecord);
